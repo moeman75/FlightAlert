@@ -30,6 +30,7 @@
         {
             this.listView1 = new System.Windows.Forms.ListView();
             this.backButton = new System.Windows.Forms.Button();
+            this.refreshButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listView1
@@ -42,7 +43,7 @@
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(96, 389);
+            this.backButton.Location = new System.Drawing.Point(27, 374);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(131, 52);
             this.backButton.TabIndex = 1;
@@ -50,11 +51,21 @@
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
+            // refreshButton
+            // 
+            this.refreshButton.Location = new System.Drawing.Point(276, 374);
+            this.refreshButton.Name = "refreshButton";
+            this.refreshButton.Size = new System.Drawing.Size(163, 52);
+            this.refreshButton.TabIndex = 2;
+            this.refreshButton.Text = "refresh";
+            this.refreshButton.UseVisualStyleBackColor = true;
+            // 
             // weather
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(711, 453);
+            this.Controls.Add(this.refreshButton);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.listView1);
             this.Name = "weather";
@@ -67,5 +78,6 @@
 
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Button refreshButton;
     }
 }
