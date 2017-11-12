@@ -1,0 +1,9 @@
+D:\Project\FlightAlert\FlightAlert\obj\Debug\FlightAlert.Form1.resources
+D:\Project\FlightAlert\FlightAlert\obj\Debug\FlightAlert.Properties.Resources.resources
+D:\Project\FlightAlert\FlightAlert\obj\Debug\FlightAlert.weather.resources
+D:\Project\FlightAlert\FlightAlert\obj\Debug\FlightAlert.csproj.GenerateResource.Cache
+D:\Project\FlightAlert\FlightAlert\bin\Debug\FlightAlert.exe.config
+D:\Project\FlightAlert\FlightAlert\bin\Debug\FlightAlert.exe
+D:\Project\FlightAlert\FlightAlert\bin\Debug\FlightAlert.pdb
+D:\Project\FlightAlert\FlightAlert\obj\Debug\FlightAlert.exe
+D:\Project\FlightAlert\FlightAlert\obj\Debug\FlightAlert.pdb
