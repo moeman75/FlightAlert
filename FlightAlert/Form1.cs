@@ -12,6 +12,8 @@ namespace FlightAlert
 {
     public partial class Form1 : Form
     {
+        weather form = new weather();
+
         public Form1()
         {
             InitializeComponent();
