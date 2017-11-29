@@ -41,3 +41,11 @@ C:\Users\grant.moe\Desktop\test\FlightAlert\FlightAlert\obj\Debug\FlightAlert.ex
 C:\Users\grant.moe\Desktop\test\FlightAlert\FlightAlert\obj\Debug\FlightAlert.pdb
 C:\Users\grant.moe\Desktop\test\FlightAlert\FlightAlert\obj\Debug\FlightAlert.csprojResolveAssemblyReference.cache
 C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlert\obj\Debug\FlightAlert.csprojResolveAssemblyReference.cache
+C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlert\obj\Debug\FlightAlert.csproj.App.config
+C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlert\bin\Debug\OpenWeatherAPI.dll
+C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlert\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlert\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlert\bin\Debug\OpenWeatherAPI.pdb
+C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlert\bin\Debug\OpenWeatherAPI.dll.config
+C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlert\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlert\bin\Debug\System.Net.Http.Primitives.xml

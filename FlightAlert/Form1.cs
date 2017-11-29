@@ -34,5 +34,10 @@ namespace FlightAlert
             PlanesForm form = new PlanesForm();
             form.Show();
         }
+
+        private void Closebutton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

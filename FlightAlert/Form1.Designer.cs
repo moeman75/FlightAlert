@@ -30,11 +30,12 @@
         {
             this.weatherCheckButton = new System.Windows.Forms.Button();
             this.PlaneButton = new System.Windows.Forms.Button();
+            this.Closebutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // weatherCheckButton
             // 
-            this.weatherCheckButton.Location = new System.Drawing.Point(407, 122);
+            this.weatherCheckButton.Location = new System.Drawing.Point(11, 59);
             this.weatherCheckButton.Margin = new System.Windows.Forms.Padding(2);
             this.weatherCheckButton.Name = "weatherCheckButton";
             this.weatherCheckButton.Size = new System.Drawing.Size(104, 42);
@@ -45,7 +46,7 @@
             // 
             // PlaneButton
             // 
-            this.PlaneButton.Location = new System.Drawing.Point(181, 122);
+            this.PlaneButton.Location = new System.Drawing.Point(12, 12);
             this.PlaneButton.Name = "PlaneButton";
             this.PlaneButton.Size = new System.Drawing.Size(103, 42);
             this.PlaneButton.TabIndex = 2;
@@ -53,11 +54,22 @@
             this.PlaneButton.UseVisualStyleBackColor = true;
             this.PlaneButton.Click += new System.EventHandler(this.PlaneButton_Click);
             // 
+            // Closebutton
+            // 
+            this.Closebutton.Location = new System.Drawing.Point(407, 231);
+            this.Closebutton.Name = "Closebutton";
+            this.Closebutton.Size = new System.Drawing.Size(103, 42);
+            this.Closebutton.TabIndex = 3;
+            this.Closebutton.Text = "Close";
+            this.Closebutton.UseVisualStyleBackColor = true;
+            this.Closebutton.Click += new System.EventHandler(this.Closebutton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(522, 285);
+            this.Controls.Add(this.Closebutton);
             this.Controls.Add(this.PlaneButton);
             this.Controls.Add(this.weatherCheckButton);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -71,6 +83,7 @@
         #endregion
         private System.Windows.Forms.Button weatherCheckButton;
         private System.Windows.Forms.Button PlaneButton;
+        private System.Windows.Forms.Button Closebutton;
     }
 }
 

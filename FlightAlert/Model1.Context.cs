@@ -13,10 +13,10 @@ namespace FlightAlert
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AirportEntities : DbContext
+    public partial class AirportEntities1 : DbContext
     {
-        public AirportEntities()
-            : base("name=AirportEntities")
+        public AirportEntities1()
+            : base("name=AirportEntities1")
         {
         }
     
@@ -25,6 +25,7 @@ namespace FlightAlert
             throw new UnintentionalCodeFirstException();
         }
     
-        
+        public virtual DbSet<MajorAirport> MajorAirports { get; set; }
+        public virtual DbSet<Plane> Planes { get; set; }
     }
 }

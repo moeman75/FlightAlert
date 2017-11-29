@@ -30,124 +30,45 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.planeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.airportDataSet1 = new FlightAlert.AirportDataSet1();
-            this.airportDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.planeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.planeTableAdapter1 = new FlightAlert.AirportDataSet1TableAdapters.PlaneTableAdapter();
-            this.planeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.delayedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.destinationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.arrivingFromDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.arrivalDateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.depatureDateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.datetimelabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.destarrivelabel = new System.Windows.Forms.Label();
-            this.Time = new System.Windows.Forms.Label();
-            this.warninglabel = new System.Windows.Forms.Label();
+            this.Timelebel = new System.Windows.Forms.Label();
+            this.warninglabel1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.warninglabel2 = new System.Windows.Forms.Label();
+            this.warninglabel3 = new System.Windows.Forms.Label();
+            this.warninglabel4 = new System.Windows.Forms.Label();
+            this.warninglabel5 = new System.Windows.Forms.Label();
+            this.warninglabelmaster = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.airportDataSet1 = new FlightAlert.AirportDataSet1();
+            this.airportDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.airportDataSet = new FlightAlert.AirportDataSet();
+            this.majorAirportsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.majorAirportsTableAdapter = new FlightAlert.AirportDataSetTableAdapters.MajorAirportsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.planeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.airportDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.airportDataSet1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.planeBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airportDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.majorAirportsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.planeIDDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.delayedDataGridViewTextBoxColumn,
-            this.destinationDataGridViewTextBoxColumn,
-            this.arrivingFromDataGridViewTextBoxColumn,
-            this.arrivalDateTimeDataGridViewTextBoxColumn,
-            this.depatureDateTimeDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.planeBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(393, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(744, 155);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(744, 421);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // airportDataSet
-            // 
-            // 
-            // planeBindingSource
-            // 
-            // 
-            // planeTableAdapter
-            // 
-            // 
-            // airportDataSet1
-            // 
-            this.airportDataSet1.DataSetName = "AirportDataSet1";
-            this.airportDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // airportDataSet1BindingSource
-            // 
-            this.airportDataSet1BindingSource.DataSource = this.airportDataSet1;
-            this.airportDataSet1BindingSource.Position = 0;
-            // 
-            // planeBindingSource1
-            // 
-            this.planeBindingSource1.DataMember = "Plane";
-            this.planeBindingSource1.DataSource = this.airportDataSet1BindingSource;
-            // 
-            // planeTableAdapter1
-            // 
-            this.planeTableAdapter1.ClearBeforeFill = true;
-            // 
-            // planeIDDataGridViewTextBoxColumn
-            // 
-            this.planeIDDataGridViewTextBoxColumn.DataPropertyName = "Plane ID";
-            this.planeIDDataGridViewTextBoxColumn.HeaderText = "Plane ID";
-            this.planeIDDataGridViewTextBoxColumn.Name = "planeIDDataGridViewTextBoxColumn";
-            this.planeIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // delayedDataGridViewTextBoxColumn
-            // 
-            this.delayedDataGridViewTextBoxColumn.DataPropertyName = "Delayed";
-            this.delayedDataGridViewTextBoxColumn.HeaderText = "Delayed";
-            this.delayedDataGridViewTextBoxColumn.Name = "delayedDataGridViewTextBoxColumn";
-            // 
-            // destinationDataGridViewTextBoxColumn
-            // 
-            this.destinationDataGridViewTextBoxColumn.DataPropertyName = "Destination";
-            this.destinationDataGridViewTextBoxColumn.HeaderText = "Destination";
-            this.destinationDataGridViewTextBoxColumn.Name = "destinationDataGridViewTextBoxColumn";
-            // 
-            // arrivingFromDataGridViewTextBoxColumn
-            // 
-            this.arrivingFromDataGridViewTextBoxColumn.DataPropertyName = "Arriving From";
-            this.arrivingFromDataGridViewTextBoxColumn.HeaderText = "Arriving From";
-            this.arrivingFromDataGridViewTextBoxColumn.Name = "arrivingFromDataGridViewTextBoxColumn";
-            // 
-            // arrivalDateTimeDataGridViewTextBoxColumn
-            // 
-            this.arrivalDateTimeDataGridViewTextBoxColumn.DataPropertyName = "Arrival DateTime";
-            this.arrivalDateTimeDataGridViewTextBoxColumn.HeaderText = "Arrival DateTime";
-            this.arrivalDateTimeDataGridViewTextBoxColumn.Name = "arrivalDateTimeDataGridViewTextBoxColumn";
-            // 
-            // depatureDateTimeDataGridViewTextBoxColumn
-            // 
-            this.depatureDateTimeDataGridViewTextBoxColumn.DataPropertyName = "Depature DateTime";
-            this.depatureDateTimeDataGridViewTextBoxColumn.HeaderText = "Depature DateTime";
-            this.depatureDateTimeDataGridViewTextBoxColumn.Name = "depatureDateTimeDataGridViewTextBoxColumn";
             // 
             // label1
             // 
@@ -189,27 +110,26 @@
             this.destarrivelabel.TabIndex = 4;
             this.destarrivelabel.Text = "Destination";
             // 
-            // Time
+            // Timelebel
             // 
-            this.Time.AutoSize = true;
-            this.Time.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Time.Location = new System.Drawing.Point(12, 319);
-            this.Time.Name = "Time";
-            this.Time.Size = new System.Drawing.Size(76, 25);
-            this.Time.TabIndex = 5;
-            this.Time.Text = "label5";
-            this.Time.Click += new System.EventHandler(this.label5_Click);
+            this.Timelebel.AutoSize = true;
+            this.Timelebel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Timelebel.Location = new System.Drawing.Point(12, 319);
+            this.Timelebel.Name = "Timelebel";
+            this.Timelebel.Size = new System.Drawing.Size(201, 25);
+            this.Timelebel.TabIndex = 5;
+            this.Timelebel.Text = "Estimated Time of";
             // 
-            // warninglabel
+            // warninglabel1
             // 
-            this.warninglabel.AutoSize = true;
-            this.warninglabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.warninglabel.ForeColor = System.Drawing.Color.Red;
-            this.warninglabel.Location = new System.Drawing.Point(328, 234);
-            this.warninglabel.Name = "warninglabel";
-            this.warninglabel.Size = new System.Drawing.Size(99, 25);
-            this.warninglabel.TabIndex = 6;
-            this.warninglabel.Text = "Warning";
+            this.warninglabel1.AutoSize = true;
+            this.warninglabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.warninglabel1.ForeColor = System.Drawing.Color.Red;
+            this.warninglabel1.Location = new System.Drawing.Point(157, 41);
+            this.warninglabel1.Name = "warninglabel1";
+            this.warninglabel1.Size = new System.Drawing.Size(73, 16);
+            this.warninglabel1.TabIndex = 6;
+            this.warninglabel1.Text = "Warning1";
             // 
             // textBox1
             // 
@@ -217,6 +137,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(134, 20);
             this.textBox1.TabIndex = 7;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // comboBox1
             // 
@@ -237,17 +158,10 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 9;
             // 
-            // textBox2
+            // comboBox3
             // 
-            this.textBox2.Location = new System.Drawing.Point(17, 262);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(134, 20);
-            this.textBox2.TabIndex = 10;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
             "12:00AM",
             "12:30AM",
             "1:00AM",
@@ -296,11 +210,123 @@
             "10:30PM",
             "11:00PM",
             "11:30PM"});
-            this.comboBox2.Location = new System.Drawing.Point(21, 356);
+            this.comboBox3.Location = new System.Drawing.Point(21, 356);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(130, 21);
+            this.comboBox3.TabIndex = 11;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1046, 461);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(91, 35);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(12, 461);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(114, 35);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Add Plane Record";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // warninglabel2
+            // 
+            this.warninglabel2.AutoSize = true;
+            this.warninglabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.warninglabel2.ForeColor = System.Drawing.Color.Red;
+            this.warninglabel2.Location = new System.Drawing.Point(157, 115);
+            this.warninglabel2.Name = "warninglabel2";
+            this.warninglabel2.Size = new System.Drawing.Size(73, 16);
+            this.warninglabel2.TabIndex = 14;
+            this.warninglabel2.Text = "Warning2";
+            // 
+            // warninglabel3
+            // 
+            this.warninglabel3.AutoSize = true;
+            this.warninglabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.warninglabel3.ForeColor = System.Drawing.Color.Red;
+            this.warninglabel3.Location = new System.Drawing.Point(18, 205);
+            this.warninglabel3.Name = "warninglabel3";
+            this.warninglabel3.Size = new System.Drawing.Size(73, 16);
+            this.warninglabel3.TabIndex = 15;
+            this.warninglabel3.Text = "Warning3";
+            // 
+            // warninglabel4
+            // 
+            this.warninglabel4.AutoSize = true;
+            this.warninglabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.warninglabel4.ForeColor = System.Drawing.Color.Red;
+            this.warninglabel4.Location = new System.Drawing.Point(157, 266);
+            this.warninglabel4.Name = "warninglabel4";
+            this.warninglabel4.Size = new System.Drawing.Size(73, 16);
+            this.warninglabel4.TabIndex = 16;
+            this.warninglabel4.Text = "Warning4";
+            // 
+            // warninglabel5
+            // 
+            this.warninglabel5.AutoSize = true;
+            this.warninglabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.warninglabel5.ForeColor = System.Drawing.Color.Red;
+            this.warninglabel5.Location = new System.Drawing.Point(157, 357);
+            this.warninglabel5.Name = "warninglabel5";
+            this.warninglabel5.Size = new System.Drawing.Size(73, 16);
+            this.warninglabel5.TabIndex = 17;
+            this.warninglabel5.Text = "Warning5";
+            // 
+            // warninglabelmaster
+            // 
+            this.warninglabelmaster.AutoSize = true;
+            this.warninglabelmaster.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.warninglabelmaster.ForeColor = System.Drawing.Color.Red;
+            this.warninglabelmaster.Location = new System.Drawing.Point(132, 470);
+            this.warninglabelmaster.Name = "warninglabelmaster";
+            this.warninglabelmaster.Size = new System.Drawing.Size(65, 16);
+            this.warninglabelmaster.TabIndex = 18;
+            this.warninglabelmaster.Text = "Warning";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.majorAirportsBindingSource, "Airport ID", true));
+            this.comboBox2.DataSource = this.majorAirportsBindingSource;
+            this.comboBox2.DisplayMember = "Name";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(17, 266);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 11;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.comboBox2.Size = new System.Drawing.Size(134, 21);
+            this.comboBox2.TabIndex = 19;
+            this.comboBox2.ValueMember = "Airport ID";
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged_1);
+            // 
+            // airportDataSet1
+            // 
+            this.airportDataSet1.DataSetName = "AirportDataSet1";
+            this.airportDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // airportDataSet1BindingSource
+            // 
+            this.airportDataSet1BindingSource.DataSource = this.airportDataSet1;
+            this.airportDataSet1BindingSource.Position = 0;
+            // 
+            // airportDataSet
+            // 
+            this.airportDataSet.DataSetName = "AirportDataSet";
+            this.airportDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // majorAirportsBindingSource
+            // 
+            this.majorAirportsBindingSource.DataMember = "MajorAirports";
+            this.majorAirportsBindingSource.DataSource = this.airportDataSet;
+            // 
+            // majorAirportsTableAdapter
+            // 
+            this.majorAirportsTableAdapter.ClearBeforeFill = true;
             // 
             // PlanesForm
             // 
@@ -308,12 +334,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1149, 508);
             this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.warninglabelmaster);
+            this.Controls.Add(this.warninglabel5);
+            this.Controls.Add(this.warninglabel4);
+            this.Controls.Add(this.warninglabel3);
+            this.Controls.Add(this.warninglabel2);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.warninglabel);
-            this.Controls.Add(this.Time);
+            this.Controls.Add(this.warninglabel1);
+            this.Controls.Add(this.Timelebel);
             this.Controls.Add(this.destarrivelabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.datetimelabel);
@@ -323,10 +356,10 @@
             this.Text = "PlanesForm";
             this.Load += new System.EventHandler(this.PlanesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.planeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.airportDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.airportDataSet1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.planeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airportDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.majorAirportsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,28 +368,28 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource planeBindingSource;
-        private System.Windows.Forms.BindingSource airportDataSet1BindingSource;
-        private AirportDataSet1 airportDataSet1;
-        private System.Windows.Forms.BindingSource planeBindingSource1;
-        private AirportDataSet1TableAdapters.PlaneTableAdapter planeTableAdapter1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn planeIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn delayedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn destinationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn arrivingFromDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn arrivalDateTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn depatureDateTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label datetimelabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label destarrivelabel;
-        private System.Windows.Forms.Label Time;
-        private System.Windows.Forms.Label warninglabel;
+        private System.Windows.Forms.Label Timelebel;
+        private System.Windows.Forms.Label warninglabel1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label warninglabel2;
+        private System.Windows.Forms.Label warninglabel3;
+        private System.Windows.Forms.Label warninglabel4;
+        private System.Windows.Forms.Label warninglabel5;
+        private System.Windows.Forms.Label warninglabelmaster;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.BindingSource airportDataSet1BindingSource;
+        private AirportDataSet1 airportDataSet1;
+        private AirportDataSet airportDataSet;
+        private System.Windows.Forms.BindingSource majorAirportsBindingSource;
+        private AirportDataSetTableAdapters.MajorAirportsTableAdapter majorAirportsTableAdapter;
     }
 }

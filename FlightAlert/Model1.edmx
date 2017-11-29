@@ -5,6 +5,15 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="AirportModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MajorAirports">
+          <Key>
+            <PropertyRef Name="Airport ID" />
+          </Key>
+          <Property Name="Airport ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Lat" Type="float" Nullable="false" />
+          <Property Name="Lon" Type="float" Nullable="false" />
+        </EntityType>
         <EntityType Name="Plane">
           <Key>
             <PropertyRef Name="Plane ID" />
@@ -18,6 +27,7 @@
           <Property Name="Depature DateTime" Type="datetime" />
         </EntityType>
         <EntityContainer Name="AirportModelStoreContainer">
+          <EntitySet Name="MajorAirports" EntityType="Self.MajorAirports" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Plane" EntityType="Self.Plane" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
@@ -25,6 +35,15 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AirportModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="MajorAirport">
+          <Key>
+            <PropertyRef Name="Airport_ID" />
+          </Key>
+          <Property Name="Airport_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Lat" Type="Double" Nullable="false" />
+          <Property Name="Lon" Type="Double" Nullable="false" />
+        </EntityType>
         <EntityType Name="Plane">
           <Key>
             <PropertyRef Name="Plane_ID" />
@@ -37,7 +56,8 @@
           <Property Name="Arrival_DateTime" Type="DateTime" Precision="3" />
           <Property Name="Depature_DateTime" Type="DateTime" Precision="3" />
         </EntityType>
-        <EntityContainer Name="AirportEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="AirportEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MajorAirports" EntityType="Self.MajorAirport" />
           <EntitySet Name="Planes" EntityType="Self.Plane" />
         </EntityContainer>
       </Schema>
@@ -45,7 +65,17 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="AirportModelStoreContainer" CdmEntityContainer="AirportEntities">
+        <EntityContainerMapping StorageEntityContainer="AirportModelStoreContainer" CdmEntityContainer="AirportEntities1">
+          <EntitySetMapping Name="MajorAirports">
+            <EntityTypeMapping TypeName="AirportModel.MajorAirport">
+              <MappingFragment StoreEntitySet="MajorAirports">
+                <ScalarProperty Name="Airport_ID" ColumnName="Airport ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Lat" ColumnName="Lat" />
+                <ScalarProperty Name="Lon" ColumnName="Lon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Planes">
             <EntityTypeMapping TypeName="AirportModel.Plane">
               <MappingFragment StoreEntitySet="Plane">

@@ -1,6 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="AirportModelStoreContainer" CdmEntityContainer="AirportEntities">
+  <EntityContainerMapping StorageEntityContainer="AirportModelStoreContainer" CdmEntityContainer="AirportEntities1">
+    <EntitySetMapping Name="MajorAirports">
+      <EntityTypeMapping TypeName="AirportModel.MajorAirport">
+        <MappingFragment StoreEntitySet="MajorAirports">
+          <ScalarProperty Name="Airport_ID" ColumnName="Airport ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="Lon" ColumnName="Lon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Planes">
       <EntityTypeMapping TypeName="AirportModel.Plane">
         <MappingFragment StoreEntitySet="Plane">
