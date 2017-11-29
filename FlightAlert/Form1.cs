@@ -28,5 +28,11 @@ namespace FlightAlert
             weather form = new weather();
             form.Show();
         }
+
+        private void PlaneButton_Click(object sender, EventArgs e)
+        {
+            PlanesForm form = new PlanesForm();
+            form.Show();
+        }
     }
 }
