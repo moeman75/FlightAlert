@@ -30,9 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.airportDataSet = new FlightAlert.AirportDataSet();
             this.planeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.planeTableAdapter = new FlightAlert.AirportDataSetTableAdapters.PlaneTableAdapter();
             this.airportDataSet1 = new FlightAlert.AirportDataSet1();
             this.airportDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.planeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -56,7 +54,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.airportDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.planeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.airportDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.airportDataSet1BindingSource)).BeginInit();
@@ -83,17 +80,12 @@
             // 
             // airportDataSet
             // 
-            this.airportDataSet.DataSetName = "AirportDataSet";
-            this.airportDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // planeBindingSource
             // 
-            this.planeBindingSource.DataMember = "Plane";
-            this.planeBindingSource.DataSource = this.airportDataSet;
             // 
             // planeTableAdapter
             // 
-            this.planeTableAdapter.ClearBeforeFill = true;
             // 
             // airportDataSet1
             // 
@@ -331,7 +323,6 @@
             this.Text = "PlanesForm";
             this.Load += new System.EventHandler(this.PlanesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.airportDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.planeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.airportDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.airportDataSet1BindingSource)).EndInit();
@@ -344,9 +335,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private AirportDataSet airportDataSet;
         private System.Windows.Forms.BindingSource planeBindingSource;
-        private AirportDataSetTableAdapters.PlaneTableAdapter planeTableAdapter;
         private System.Windows.Forms.BindingSource airportDataSet1BindingSource;
         private AirportDataSet1 airportDataSet1;
         private System.Windows.Forms.BindingSource planeBindingSource1;
