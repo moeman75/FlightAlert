@@ -303,7 +303,12 @@
       <DependentUpon>weather.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\OpenWeatherAPI\OpenWeatherAPI.csproj">
+      <Project>{8a7eb2f4-8c39-481a-8b75-3d2350c95cc5}</Project>
+      <Name>OpenWeatherAPI</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />

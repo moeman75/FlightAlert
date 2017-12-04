@@ -64,3 +64,6 @@ C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlertWeb\bin\Microsoft.AI.Web.xm
 C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlertWeb\obj\Debug\FlightAlertWeb.dll
 C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlertWeb\obj\Debug\FlightAlertWeb.pdb
 C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlertWeb\obj\Debug\FlightAlertWeb.csprojResolveAssemblyReference.cache
+C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlertWeb\bin\OpenWeatherAPI.dll
+C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlertWeb\bin\OpenWeatherAPI.pdb
+C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlertWeb\bin\OpenWeatherAPI.dll.config
