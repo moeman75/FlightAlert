@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="AirportModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="IncomingPlanes">
+    <Key>
+      <PropertyRef Name="Plane ID" />
+    </Key>
+    <Property Name="Plane ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Delayed" Type="int" Nullable="false" />
+    <Property Name="Arriving From" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Arrival Datetime" Type="datetime" Nullable="false" />
+  </EntityType>
   <EntityType Name="MajorAirports">
     <Key>
       <PropertyRef Name="Airport ID" />
@@ -9,20 +19,19 @@
     <Property Name="Lat" Type="float" Nullable="false" />
     <Property Name="Lon" Type="float" Nullable="false" />
   </EntityType>
-  <EntityType Name="Plane">
+  <EntityType Name="OutgoingPlanes">
     <Key>
       <PropertyRef Name="Plane ID" />
     </Key>
     <Property Name="Plane ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Delayed" Type="int" Nullable="false" />
-    <Property Name="Destination" Type="varchar" MaxLength="50" />
-    <Property Name="Arriving From" Type="varchar" MaxLength="50" />
-    <Property Name="Arrival DateTime" Type="datetime" />
-    <Property Name="Depature DateTime" Type="datetime" />
+    <Property Name="Destination" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Depature DateTime" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityContainer Name="AirportModelStoreContainer">
+    <EntitySet Name="IncomingPlanes" EntityType="Self.IncomingPlanes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MajorAirports" EntityType="Self.MajorAirports" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Plane" EntityType="Self.Plane" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OutgoingPlanes" EntityType="Self.OutgoingPlanes" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

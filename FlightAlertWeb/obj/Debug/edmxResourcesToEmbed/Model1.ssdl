@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AirportModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Airports">
+    <Key>
+      <PropertyRef Name="Airport ID" />
+    </Key>
+    <Property Name="Airport ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Latitude" Type="float" Nullable="false" />
+    <Property Name="Longitude" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IncomingPlanes">
+    <Key>
+      <PropertyRef Name="Plane ID" />
+    </Key>
+    <Property Name="Plane ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Delayed" Type="int" Nullable="false" />
+    <Property Name="Arrival Date" Type="datetime" Nullable="false" />
+    <Property Name="Arriving From" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OutGoingPlanes">
+    <Key>
+      <PropertyRef Name="Plane ID" />
+    </Key>
+    <Property Name="Plane ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Delayed" Type="int" Nullable="false" />
+    <Property Name="Departure Date" Type="datetime" Nullable="false" />
+    <Property Name="Destination" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="AirportModelStoreContainer">
+    <EntitySet Name="Airports" EntityType="Self.Airports" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IncomingPlanes" EntityType="Self.IncomingPlanes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OutGoingPlanes" EntityType="Self.OutGoingPlanes" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

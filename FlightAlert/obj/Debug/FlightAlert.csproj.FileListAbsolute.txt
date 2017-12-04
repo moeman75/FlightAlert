@@ -12,8 +12,6 @@ C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlert\obj\Debug\FlightAlert.Plan
 C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlert\obj\Debug\FlightAlert.Properties.Resources.resources
 C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlert\obj\Debug\FlightAlert.weather.resources
 C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlert\obj\Debug\FlightAlert.csproj.GenerateResource.Cache
-C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlert\bin\Debug\Airport.mdf
-C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlert\bin\Debug\Airport_log.ldf
 C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlert\bin\Debug\FlightAlert.exe.config
 C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlert\bin\Debug\FlightAlert.exe
 C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlert\bin\Debug\FlightAlert.pdb
@@ -49,3 +47,5 @@ C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlert\bin\Debug\OpenWeatherAPI.p
 C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlert\bin\Debug\OpenWeatherAPI.dll.config
 C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlert\bin\Debug\System.Net.Http.Extensions.xml
 C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlert\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlert\bin\Debug\MyAirport.mdf
+C:\Users\quinn.murphy\Desktop\FlightAlert\FlightAlert\bin\Debug\MyAirport_log.ldf

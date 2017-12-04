@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MyAirportModelStoreContainer" CdmEntityContainer="MyAirportEntities">
+    <EntitySetMapping Name="IncomingPlanes">
+      <EntityTypeMapping TypeName="MyAirportModel.IncomingPlane">
+        <MappingFragment StoreEntitySet="IncomingPlanes">
+          <ScalarProperty Name="Plane_ID" ColumnName="Plane ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Delayed" ColumnName="Delayed" />
+          <ScalarProperty Name="Date_of_Arrival" ColumnName="Date of Arrival" />
+          <ScalarProperty Name="Arriving_from" ColumnName="Arriving from" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OutgoingPlanes">
+      <EntityTypeMapping TypeName="MyAirportModel.OutgoingPlane">
+        <MappingFragment StoreEntitySet="OutgoingPlanes">
+          <ScalarProperty Name="Plane_ID" ColumnName="Plane ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Delayed" ColumnName="Delayed" />
+          <ScalarProperty Name="Date_of_Departure" ColumnName="Date of Departure" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tables">
+      <EntityTypeMapping TypeName="MyAirportModel.Table">
+        <MappingFragment StoreEntitySet="Table">
+          <ScalarProperty Name="Airport_ID" ColumnName="Airport ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

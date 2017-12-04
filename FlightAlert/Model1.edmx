@@ -5,6 +5,16 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="AirportModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="IncomingPlanes">
+          <Key>
+            <PropertyRef Name="Plane ID" />
+          </Key>
+          <Property Name="Plane ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Delayed" Type="int" Nullable="false" />
+          <Property Name="Arriving From" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Arrival Datetime" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="MajorAirports">
           <Key>
             <PropertyRef Name="Airport ID" />
@@ -14,27 +24,36 @@
           <Property Name="Lat" Type="float" Nullable="false" />
           <Property Name="Lon" Type="float" Nullable="false" />
         </EntityType>
-        <EntityType Name="Plane">
+        <EntityType Name="OutgoingPlanes">
           <Key>
             <PropertyRef Name="Plane ID" />
           </Key>
           <Property Name="Plane ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Delayed" Type="int" Nullable="false" />
-          <Property Name="Destination" Type="varchar" MaxLength="50" />
-          <Property Name="Arriving From" Type="varchar" MaxLength="50" />
-          <Property Name="Arrival DateTime" Type="datetime" />
-          <Property Name="Depature DateTime" Type="datetime" />
+          <Property Name="Destination" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Depature DateTime" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityContainer Name="AirportModelStoreContainer">
+          <EntitySet Name="IncomingPlanes" EntityType="Self.IncomingPlanes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MajorAirports" EntityType="Self.MajorAirports" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Plane" EntityType="Self.Plane" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OutgoingPlanes" EntityType="Self.OutgoingPlanes" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AirportModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="IncomingPlane">
+          <Key>
+            <PropertyRef Name="Plane_ID" />
+          </Key>
+          <Property Name="Plane_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Delayed" Type="Int32" Nullable="false" />
+          <Property Name="Arriving_From" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Arrival_Datetime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
         <EntityType Name="MajorAirport">
           <Key>
             <PropertyRef Name="Airport_ID" />
@@ -44,21 +63,20 @@
           <Property Name="Lat" Type="Double" Nullable="false" />
           <Property Name="Lon" Type="Double" Nullable="false" />
         </EntityType>
-        <EntityType Name="Plane">
+        <EntityType Name="OutgoingPlane">
           <Key>
             <PropertyRef Name="Plane_ID" />
           </Key>
           <Property Name="Plane_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Delayed" Type="Int32" Nullable="false" />
-          <Property Name="Destination" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Arriving_From" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Arrival_DateTime" Type="DateTime" Precision="3" />
-          <Property Name="Depature_DateTime" Type="DateTime" Precision="3" />
+          <Property Name="Destination" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Depature_DateTime" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityContainer Name="AirportEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="IncomingPlanes" EntityType="Self.IncomingPlane" />
           <EntitySet Name="MajorAirports" EntityType="Self.MajorAirport" />
-          <EntitySet Name="Planes" EntityType="Self.Plane" />
+          <EntitySet Name="OutgoingPlanes" EntityType="Self.OutgoingPlane" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -66,6 +84,17 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="AirportModelStoreContainer" CdmEntityContainer="AirportEntities1">
+          <EntitySetMapping Name="IncomingPlanes">
+            <EntityTypeMapping TypeName="AirportModel.IncomingPlane">
+              <MappingFragment StoreEntitySet="IncomingPlanes">
+                <ScalarProperty Name="Plane_ID" ColumnName="Plane ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Delayed" ColumnName="Delayed" />
+                <ScalarProperty Name="Arriving_From" ColumnName="Arriving From" />
+                <ScalarProperty Name="Arrival_Datetime" ColumnName="Arrival Datetime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="MajorAirports">
             <EntityTypeMapping TypeName="AirportModel.MajorAirport">
               <MappingFragment StoreEntitySet="MajorAirports">
@@ -76,15 +105,13 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Planes">
-            <EntityTypeMapping TypeName="AirportModel.Plane">
-              <MappingFragment StoreEntitySet="Plane">
+          <EntitySetMapping Name="OutgoingPlanes">
+            <EntityTypeMapping TypeName="AirportModel.OutgoingPlane">
+              <MappingFragment StoreEntitySet="OutgoingPlanes">
                 <ScalarProperty Name="Plane_ID" ColumnName="Plane ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Delayed" ColumnName="Delayed" />
                 <ScalarProperty Name="Destination" ColumnName="Destination" />
-                <ScalarProperty Name="Arriving_From" ColumnName="Arriving From" />
-                <ScalarProperty Name="Arrival_DateTime" ColumnName="Arrival DateTime" />
                 <ScalarProperty Name="Depature_DateTime" ColumnName="Depature DateTime" />
               </MappingFragment>
             </EntityTypeMapping>

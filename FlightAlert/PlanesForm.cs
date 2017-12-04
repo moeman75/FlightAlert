@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace FlightAlert
 {
@@ -19,8 +20,11 @@ namespace FlightAlert
 
         private void PlanesForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'airportDataSet.MajorAirports' table. You can move, or remove it, as needed.
-            this.majorAirportsTableAdapter.Fill(this.airportDataSet.MajorAirports);
+            // TODO: This line of code loads data into the 'myAirportDataSet.OutgoingPlanes' table. You can move, or remove it, as needed.
+            this.outgoingPlanesTableAdapter.Fill(this.myAirportDataSet.OutgoingPlanes);
+            // TODO: This line of code loads data into the 'myAirportDataSet.IncomingPlanes' table. You can move, or remove it, as needed.
+            this.incomingPlanesTableAdapter.Fill(this.myAirportDataSet.IncomingPlanes);
+
             datetimelabel.Text = "";
             warninglabelmaster.Text = "";
             warninglabel1.Text = "";
@@ -69,48 +73,65 @@ namespace FlightAlert
         {
             string name = textBox1.Text;
             bool allarechar = name.All(Char.IsLetterOrDigit);
-            AirportEntities1 dbcon = new AirportEntities1();
-            Plane newentry = new Plane();
+            MyAirportEntities dbcon = new MyAirportEntities();
+            DateTime dayoflight = DateTime.Today;
+            int index2 = comboBox2.SelectedIndex;
+            IncomingPlane plane = new IncomingPlane();
+            plane.Arrival_Datetime = dayoflight;
+            plane.Arriving_From = "Chicago";
+            plane.Delayed = 0;
+            plane.Name = "Flight123";
+            plane.Plane_ID = 1;
+            dbcon.IncomingPlanes.Add(plane);
+            dbcon.SaveChanges();
 
+            
+            
+            /*
             if (name == "")
             {
                 warninglabel1.Text = "Name cannot be blank";
+                return;
             }
             else if (!allarechar)
-            { 
+            {
                 warninglabel1.Text = "No Special Characters allowed";
+                return;
             }
             else
+                warninglabel1.Text = "";
+
+            
+
+            int index = comboBox1.SelectedIndex;
+
+            if (index == -1)
             {
-                newentry.Name = name;
-
-                int index = comboBox1.SelectedIndex;
-                
-                if(index == -1)
-                {
-                    warninglabel2.Text = "Must choose if flight is arriving or departing";
-                }
-                else
-                {
-                    DateTime dayoflight = dateTimePicker1.Value;
-                    int index2 = comboBox2.SelectedIndex;
-
-                    if (index2 == -1 && index == 0)
-                    {
-                        warninglabel4.Text = "Must choose where flight is arriving from";
-                    }
-                    else if (index2 == -1 && index == 1)
-                    {
-                        warninglabel4.Text = "Must choose destination";
-                    }
-                    else
-                    {
-
-                    }
-                }
-
+                warninglabel2.Text = "Must choose if flight is arriving or departing";
+                return;
             }
+            else
+                warninglabel2.Text = "";
 
+            
+
+            if (index2 == -1 && index == 0)
+            {
+                warninglabel4.Text = "Must choose where flight is arriving from";
+            }
+            else if (index2 == -1 && index == 1)
+            {
+                warninglabel4.Text = "Must choose destination";
+            }
+            
+
+            
+            
+           
+            
+
+            //dbcon.SaveChanges();
+            */
 
         }
 
@@ -126,6 +147,14 @@ namespace FlightAlert
             
         }
 
-        
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void bindingSource2_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

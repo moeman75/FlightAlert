@@ -48,27 +48,45 @@
             this.warninglabel5 = new System.Windows.Forms.Label();
             this.warninglabelmaster = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.airportDataSet1 = new FlightAlert.AirportDataSet1();
-            this.airportDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.airportDataSet = new FlightAlert.AirportDataSet();
-            this.majorAirportsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.majorAirportsTableAdapter = new FlightAlert.AirportDataSetTableAdapters.MajorAirportsTableAdapter();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.myAirportDataSet = new FlightAlert.MyAirportDataSet();
+            this.incomingPlanesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.incomingPlanesTableAdapter = new FlightAlert.MyAirportDataSetTableAdapters.IncomingPlanesTableAdapter();
+            this.planeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delayedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateOfArrivalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.arrivingFromDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.outgoingPlanesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.outgoingPlanesTableAdapter = new FlightAlert.MyAirportDataSetTableAdapters.OutgoingPlanesTableAdapter();
+            this.planeIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delayedDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateOfDepartureDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.destinationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.airportDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.airportDataSet1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.airportDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.majorAirportsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myAirportDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incomingPlanesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outgoingPlanesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.planeIDDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.delayedDataGridViewTextBoxColumn,
+            this.dateOfArrivalDataGridViewTextBoxColumn,
+            this.arrivingFromDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.incomingPlanesBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(393, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(744, 421);
+            this.dataGridView1.Size = new System.Drawing.Size(569, 190);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
@@ -293,9 +311,7 @@
             // 
             // comboBox2
             // 
-            this.comboBox2.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.majorAirportsBindingSource, "Airport ID", true));
-            this.comboBox2.DataSource = this.majorAirportsBindingSource;
-            this.comboBox2.DisplayMember = "Name";
+            this.comboBox2.DisplayMember = "Airport ID";
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(17, 266);
             this.comboBox2.Name = "comboBox2";
@@ -304,35 +320,121 @@
             this.comboBox2.ValueMember = "Airport ID";
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged_1);
             // 
-            // airportDataSet1
+            // dataGridView2
             // 
-            this.airportDataSet1.DataSetName = "AirportDataSet1";
-            this.airportDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.planeIDDataGridViewTextBoxColumn1,
+            this.nameDataGridViewTextBoxColumn1,
+            this.delayedDataGridViewTextBoxColumn1,
+            this.dateOfDepartureDataGridViewTextBoxColumn,
+            this.destinationDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.outgoingPlanesBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(393, 266);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(569, 204);
+            this.dataGridView2.TabIndex = 20;
             // 
-            // airportDataSet1BindingSource
+            // myAirportDataSet
             // 
-            this.airportDataSet1BindingSource.DataSource = this.airportDataSet1;
-            this.airportDataSet1BindingSource.Position = 0;
+            this.myAirportDataSet.DataSetName = "MyAirportDataSet";
+            this.myAirportDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // airportDataSet
+            // incomingPlanesBindingSource
             // 
-            this.airportDataSet.DataSetName = "AirportDataSet";
-            this.airportDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.incomingPlanesBindingSource.DataMember = "IncomingPlanes";
+            this.incomingPlanesBindingSource.DataSource = this.myAirportDataSet;
             // 
-            // majorAirportsBindingSource
+            // incomingPlanesTableAdapter
             // 
-            this.majorAirportsBindingSource.DataMember = "MajorAirports";
-            this.majorAirportsBindingSource.DataSource = this.airportDataSet;
+            this.incomingPlanesTableAdapter.ClearBeforeFill = true;
             // 
-            // majorAirportsTableAdapter
+            // planeIDDataGridViewTextBoxColumn
             // 
-            this.majorAirportsTableAdapter.ClearBeforeFill = true;
+            this.planeIDDataGridViewTextBoxColumn.DataPropertyName = "Plane ID";
+            this.planeIDDataGridViewTextBoxColumn.HeaderText = "Plane ID";
+            this.planeIDDataGridViewTextBoxColumn.Name = "planeIDDataGridViewTextBoxColumn";
+            this.planeIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // delayedDataGridViewTextBoxColumn
+            // 
+            this.delayedDataGridViewTextBoxColumn.DataPropertyName = "Delayed";
+            this.delayedDataGridViewTextBoxColumn.HeaderText = "Delayed";
+            this.delayedDataGridViewTextBoxColumn.Name = "delayedDataGridViewTextBoxColumn";
+            this.delayedDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateOfArrivalDataGridViewTextBoxColumn
+            // 
+            this.dateOfArrivalDataGridViewTextBoxColumn.DataPropertyName = "Date of Arrival";
+            this.dateOfArrivalDataGridViewTextBoxColumn.HeaderText = "Date of Arrival";
+            this.dateOfArrivalDataGridViewTextBoxColumn.Name = "dateOfArrivalDataGridViewTextBoxColumn";
+            this.dateOfArrivalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // arrivingFromDataGridViewTextBoxColumn
+            // 
+            this.arrivingFromDataGridViewTextBoxColumn.DataPropertyName = "Arriving from";
+            this.arrivingFromDataGridViewTextBoxColumn.HeaderText = "Arriving from";
+            this.arrivingFromDataGridViewTextBoxColumn.Name = "arrivingFromDataGridViewTextBoxColumn";
+            this.arrivingFromDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // outgoingPlanesBindingSource
+            // 
+            this.outgoingPlanesBindingSource.DataMember = "OutgoingPlanes";
+            this.outgoingPlanesBindingSource.DataSource = this.myAirportDataSet;
+            // 
+            // outgoingPlanesTableAdapter
+            // 
+            this.outgoingPlanesTableAdapter.ClearBeforeFill = true;
+            // 
+            // planeIDDataGridViewTextBoxColumn1
+            // 
+            this.planeIDDataGridViewTextBoxColumn1.DataPropertyName = "Plane ID";
+            this.planeIDDataGridViewTextBoxColumn1.HeaderText = "Plane ID";
+            this.planeIDDataGridViewTextBoxColumn1.Name = "planeIDDataGridViewTextBoxColumn1";
+            this.planeIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // delayedDataGridViewTextBoxColumn1
+            // 
+            this.delayedDataGridViewTextBoxColumn1.DataPropertyName = "Delayed";
+            this.delayedDataGridViewTextBoxColumn1.HeaderText = "Delayed";
+            this.delayedDataGridViewTextBoxColumn1.Name = "delayedDataGridViewTextBoxColumn1";
+            this.delayedDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dateOfDepartureDataGridViewTextBoxColumn
+            // 
+            this.dateOfDepartureDataGridViewTextBoxColumn.DataPropertyName = "Date of Departure";
+            this.dateOfDepartureDataGridViewTextBoxColumn.HeaderText = "Date of Departure";
+            this.dateOfDepartureDataGridViewTextBoxColumn.Name = "dateOfDepartureDataGridViewTextBoxColumn";
+            this.dateOfDepartureDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // destinationDataGridViewTextBoxColumn
+            // 
+            this.destinationDataGridViewTextBoxColumn.DataPropertyName = "Destination";
+            this.destinationDataGridViewTextBoxColumn.HeaderText = "Destination";
+            this.destinationDataGridViewTextBoxColumn.Name = "destinationDataGridViewTextBoxColumn";
+            this.destinationDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // PlanesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1149, 508);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.warninglabelmaster);
             this.Controls.Add(this.warninglabel5);
@@ -356,10 +458,10 @@
             this.Text = "PlanesForm";
             this.Load += new System.EventHandler(this.PlanesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.airportDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.airportDataSet1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.airportDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.majorAirportsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myAirportDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incomingPlanesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outgoingPlanesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,10 +488,21 @@
         private System.Windows.Forms.Label warninglabel5;
         private System.Windows.Forms.Label warninglabelmaster;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.BindingSource airportDataSet1BindingSource;
-        private AirportDataSet1 airportDataSet1;
-        private AirportDataSet airportDataSet;
-        private System.Windows.Forms.BindingSource majorAirportsBindingSource;
-        private AirportDataSetTableAdapters.MajorAirportsTableAdapter majorAirportsTableAdapter;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private MyAirportDataSet myAirportDataSet;
+        private System.Windows.Forms.BindingSource incomingPlanesBindingSource;
+        private MyAirportDataSetTableAdapters.IncomingPlanesTableAdapter incomingPlanesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn planeIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn delayedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfArrivalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn arrivingFromDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource outgoingPlanesBindingSource;
+        private MyAirportDataSetTableAdapters.OutgoingPlanesTableAdapter outgoingPlanesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn planeIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn delayedDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfDepartureDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn destinationDataGridViewTextBoxColumn;
     }
 }

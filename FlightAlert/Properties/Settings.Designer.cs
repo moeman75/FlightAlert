@@ -33,5 +33,16 @@ namespace FlightAlert.Properties {
                 return ((string)(this["AirportConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\MyAirport.mdf" +
+            ";Integrated Security=True")]
+        public string MyAirportConnectionString {
+            get {
+                return ((string)(this["MyAirportConnectionString"]));
+            }
+        }
     }
 }

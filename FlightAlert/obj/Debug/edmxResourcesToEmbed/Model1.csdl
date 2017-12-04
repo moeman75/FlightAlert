@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="AirportModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="IncomingPlane">
+    <Key>
+      <PropertyRef Name="Plane_ID" />
+    </Key>
+    <Property Name="Plane_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Delayed" Type="Int32" Nullable="false" />
+    <Property Name="Arriving_From" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Arrival_Datetime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
   <EntityType Name="MajorAirport">
     <Key>
       <PropertyRef Name="Airport_ID" />
@@ -9,20 +19,19 @@
     <Property Name="Lat" Type="Double" Nullable="false" />
     <Property Name="Lon" Type="Double" Nullable="false" />
   </EntityType>
-  <EntityType Name="Plane">
+  <EntityType Name="OutgoingPlane">
     <Key>
       <PropertyRef Name="Plane_ID" />
     </Key>
     <Property Name="Plane_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Delayed" Type="Int32" Nullable="false" />
-    <Property Name="Destination" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Arriving_From" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Arrival_DateTime" Type="DateTime" Precision="3" />
-    <Property Name="Depature_DateTime" Type="DateTime" Precision="3" />
+    <Property Name="Destination" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Depature_DateTime" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
   <EntityContainer Name="AirportEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="IncomingPlanes" EntityType="Self.IncomingPlane" />
     <EntitySet Name="MajorAirports" EntityType="Self.MajorAirport" />
-    <EntitySet Name="Planes" EntityType="Self.Plane" />
+    <EntitySet Name="OutgoingPlanes" EntityType="Self.OutgoingPlane" />
   </EntityContainer>
 </Schema>

@@ -25,7 +25,8 @@ namespace FlightAlert
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<IncomingPlane> IncomingPlanes { get; set; }
         public virtual DbSet<MajorAirport> MajorAirports { get; set; }
-        public virtual DbSet<Plane> Planes { get; set; }
+        public virtual DbSet<OutgoingPlane> OutgoingPlanes { get; set; }
     }
 }
