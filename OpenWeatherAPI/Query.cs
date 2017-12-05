@@ -45,7 +45,7 @@ namespace OpenWeatherAPI
         {
             Weathers = new List<Weather>();
 
-            JObject jsonData = JObject.Parse(new System.Net.WebClient().DownloadString(string.Format(Query.BaseAdress + "weather?q={1}&appid={0}", apiKey, queryStr)));
+            JObject jsonData = JObject.Parse(new System.Net.WebClient().DownloadString(string.Format(Query.BaseAdress + "weather?q={0}&appid={1}", queryStr, apiKey)));
             if (jsonData.SelectToken(COD).ToString() == Query.ValidCod)
             {
                 ValidRequest = true;

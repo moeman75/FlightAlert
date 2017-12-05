@@ -12,6 +12,9 @@
         .auto-style3 {
             width: 386px;
         }
+        #form1 {
+            height: 231px;
+        }
     </style>
 </head>
 <body>
@@ -31,6 +34,12 @@
         <div>
         </div>
             <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+            <br />
+            <br />
+            <asp:TextBox ID="citytb" runat="server"></asp:TextBox>
+            <br />
+            <br />
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
     </form>
 </body>
 </html>
