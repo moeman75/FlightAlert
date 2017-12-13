@@ -10,8 +10,10 @@ namespace FlightAlertWeb
     
     public partial class Addplane : System.Web.UI.Page
     {
+        AirportEntities dbcon = new AirportEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
+            DateTime today = DateTime.Now;
             warningLabel1.Text = "";
             warningLabel2.Text = "";
             warningLabel3.Text = "";
@@ -19,12 +21,38 @@ namespace FlightAlertWeb
             warningLabel5.Text = "";
             ArriveDepartLabel.Text = "Destination/Arriving from";
             DateLabel.Text = "Date of flight";
+
+            foreach (OutGoingPlane plane in dbcon.OutGoingPlanes)
+            {
+                DateTime flightday = plane.Departure_Date;
+                if(flightday.CompareTo(today) < 0)
+                {
+                    dbcon.OutGoingPlanes.Remove(plane);
+                }
+
+
+            }
+            foreach (IncomingPlane plane in dbcon.IncomingPlanes)
+            {
+                DateTime flightday = plane.Arrival_Date;
+                if (flightday.CompareTo(today) < 0)
+                {
+                    dbcon.IncomingPlanes.Remove(plane);
+                }
+
+
+            }
+
+            dbcon.SaveChanges();
+            IncomingGridView.DataBind();
+            OutgoingGridView.DataBind();
         }
 
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
         {
             DateTime today = DateTime.Today;
             DateTime selected = Calendar1.SelectedDate;
+
 
             if (selected.CompareTo(today) < 0)
             {
@@ -33,11 +61,13 @@ namespace FlightAlertWeb
             else
                 warningLabel5.Text = "";
 
+
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            AirportEntities dbcon = new AirportEntities();
+            
             int delayed = DropDownList1.SelectedIndex;
             string name = TextBox1.Text;
             int arrivedepart = DropDownList2.SelectedIndex;
@@ -75,7 +105,6 @@ namespace FlightAlertWeb
             else
                 warningLabel5.Text = "";
             date = date.Date + time;
-            warningLabel5.Text = date.ToString();
 
             if (arrivedepart == 0)
             {

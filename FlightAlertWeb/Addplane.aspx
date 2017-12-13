@@ -38,8 +38,7 @@
                     <td class="auto-style2">&nbsp;<asp:Label ID="Label1" runat="server" Font-Bold="True" Text="Add a Plane"></asp:Label>
                     </td>
                     <td class="auto-style3">
-                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Start.aspx">Home</asp:HyperLink>
-                    </td>
+                        &nbsp;</td>
                     <td>
                         <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/weather.aspx">View Weather</asp:HyperLink>
                     </td>
