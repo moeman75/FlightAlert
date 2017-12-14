@@ -29,6 +29,13 @@
         .auto-style9 {
             height: 6px;
         }
+        .auto-style10 {
+            width: 282px;
+            height: 30px;
+        }
+        .auto-style11 {
+            height: 30px;
+        }
     </style>
 </head>
 <body>
@@ -69,21 +76,21 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style7">
+                    <td class="auto-style10">
                         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 &nbsp;
                         <asp:Label ID="warningLabel1" runat="server" Font-Bold="True" ForeColor="Red" Text="warning1"></asp:Label>
                     </td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style11"></td>
+                    <td class="auto-style11"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style7">
+                    <td class="auto-style6">
                         <asp:Label ID="Label4" runat="server" Font-Bold="True" Text="Delayed?"></asp:Label>
                     </td>
-                    <td>
-                        &nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style4">
+                        </td>
+                    <td class="auto-style4"></td>
                 </tr>
                 <tr>
                     <td class="auto-style8">

@@ -65,7 +65,7 @@
             <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
                     </td>
                     <td>
-            <asp:Label ID="Label7" runat="server" Text="Label" Font-Bold="True" Font-Size="Larger"></asp:Label>
+            <asp:Label ID="Label7" runat="server" Text="Label" Font-Bold="True" Font-Size="Larger" BackColor="White" BorderColor="Black"></asp:Label>
                     </td>
                 </tr>
                 <tr>
@@ -143,6 +143,8 @@
                     <td class="auto-style8"></td>
                     <td class="auto-style6">
                         <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Delay Selected Flight" Visible="False" Width="191px" />
+                    &nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Undelay Selected Flight" Visible="False" Width="190px" />
                     </td>
                     <td class="auto-style4"></td>
                 </tr>

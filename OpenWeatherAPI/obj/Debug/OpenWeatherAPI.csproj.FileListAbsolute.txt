@@ -32,3 +32,4 @@ C:\Users\quinn.murphy\Desktop\FlightAlert\OpenWeatherAPI\bin\Debug\OpenWeatherAP
 C:\Users\quinn.murphy\Desktop\FlightAlert\OpenWeatherAPI\obj\Debug\OpenWeatherAPI.csproj.App.config
 C:\Users\quinn.murphy\Desktop\FlightAlert\OpenWeatherAPI\obj\Debug\OpenWeatherAPI.dll
 C:\Users\quinn.murphy\Desktop\FlightAlert\OpenWeatherAPI\obj\Debug\OpenWeatherAPI.pdb
+C:\Users\quinn.murphy\Desktop\FlightAlert\OpenWeatherAPI\obj\Debug\OpenWeatherAPI.csprojResolveAssemblyReference.cache

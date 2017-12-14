@@ -23,6 +23,8 @@ namespace FlightAlertWeb
             Label5.Text = "";
             Label6.Text = "";
             Label7.Text = "Risk: ";
+            Label7.BackColor = System.Drawing.Color.White;
+            Label7.ForeColor = System.Drawing.Color.Black;
             Label8.Text = "Todays Date and Time: " + DateTime.Now;
             risk = 0;
 
@@ -66,7 +68,7 @@ namespace FlightAlertWeb
                 Label3.Text = string.Format("Tempurature: {0} °F", query.Main.Temperature.FahrenheitCurrent);
                 Label4.Text = string.Format("Wind speed (mph): {0}", (query.Wind.SpeedFeetPerSecond * 0.681818));
                 Label5.Text = string.Format("Percipitation: {0}%", query.Main.Humdity);
-                Label6.Text = string.Format("Cloudiness: {0}", query.Clouds.All);
+                Label6.Text = string.Format("Cloudiness: {0}%", query.Clouds.All);
 
                 if ((query.Wind.SpeedFeetPerSecond * 0.681818) > 28.7695)
                 {
@@ -101,8 +103,8 @@ namespace FlightAlertWeb
             {
                 Label7.ForeColor = System.Drawing.Color.Red;
             }
-
-            Label7.Text = "Risk: " + risk.ToString();
+            Label7.BackColor = System.Drawing.Color.Gray;
+            Label7.Text = "Risk: " + risk.ToString() + " ";
 
 
 
@@ -111,6 +113,7 @@ namespace FlightAlertWeb
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Button2.Visible = true;
+            Button4.Visible = true;
         }
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -124,6 +127,8 @@ namespace FlightAlertWeb
             {
                 item.Delayed = 1;
             }
+            dbcon.SaveChanges();
+            GridView1.DataBind();
         }
 
         protected void Button3_Click(object sender, EventArgs e)
@@ -142,7 +147,24 @@ namespace FlightAlertWeb
                 }
 
             }
+            dbcon.SaveChanges();
+            GridView1.DataBind();
 
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            int planeID = (int)GridView1.SelectedValue;
+            var planes =
+                from item in dbcon.OutGoingPlanes
+                where item.Plane_ID.Equals(planeID)
+                select item;
+            foreach (OutGoingPlane item in planes)
+            {
+                item.Delayed = 0;
+            }
+            dbcon.SaveChanges();
+            GridView1.DataBind();
         }
     }
 }
